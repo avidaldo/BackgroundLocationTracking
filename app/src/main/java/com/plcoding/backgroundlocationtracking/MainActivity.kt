@@ -20,15 +20,20 @@ import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat
 import com.plcoding.backgroundlocationtracking.ui.theme.BackgroundLocationTrackingTheme
 
+
+
+val REQUIRED_PERMISSIONS = arrayOf(
+    Manifest.permission.ACCESS_COARSE_LOCATION,
+    Manifest.permission.ACCESS_FINE_LOCATION,
+)
+
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ActivityCompat.requestPermissions(
             this,
-            arrayOf(
-                Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_FINE_LOCATION,
-            ),
+            REQUIRED_PERMISSIONS,
             0
         )
         setContent {
