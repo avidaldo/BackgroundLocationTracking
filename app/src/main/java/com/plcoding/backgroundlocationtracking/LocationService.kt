@@ -53,8 +53,8 @@ class LocationService: Service() {
             .getLocationUpdates(10000L)
             .catch { e -> e.printStackTrace() }
             .onEach { location ->
-                val lat = location.latitude.toString().takeLast(3)
-                val long = location.longitude.toString().takeLast(3)
+                val lat = location.latitude.toString()
+                val long = location.longitude.toString()
                 val updatedNotification = notification.setContentText(
                     "Location: ($lat, $long)"
                 )
